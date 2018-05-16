@@ -29,24 +29,24 @@ public class PhoneFragment extends Fragment {
         final ListView listView=view.findViewById(R.id.listview);
         final List<Phone> phones= getPhone();
         listView.setAdapter(new PhoneAdapter(phones,getActivity()));
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                final Phone phone = phones.get(position);
-                Fragment fragment = new ResultFragment();
-
-                Bundle bundle =new Bundle();
-                bundle.putSerializable("phone",phone);
-                fragment.setArguments(bundle);
-                FragmentManager fragmentManager = getFragmentManager();
-                if(fragmentManager != null){
-                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.content, fragment);
-                    fragmentTransaction.addToBackStack(null);
-                    fragmentTransaction.commit();
-                }
-            }
-        });
+//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                final Phone phone = phones.get(position);
+//                Fragment fragment = new ResultFragment();
+//
+//                Bundle bundle =new Bundle();
+//                bundle.putSerializable("phone",phone);
+//                fragment.setArguments(bundle);
+//                FragmentManager fragmentManager = getFragmentManager();
+//                if(fragmentManager != null){
+//                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//                    fragmentTransaction.replace(R.id.content, fragment);
+//                    fragmentTransaction.addToBackStack(null);
+//                    fragmentTransaction.commit();
+//                }
+//            }
+//        });
         return view;
     }
     private List<Phone> getPhone() {

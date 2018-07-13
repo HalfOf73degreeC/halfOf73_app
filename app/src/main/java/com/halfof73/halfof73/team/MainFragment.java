@@ -77,22 +77,22 @@ public class MainFragment extends Fragment {
             myViewHolder.ivTeam.setImageResource(team.getImageId());
             myViewHolder.tvName.setText(team.getName());
             myViewHolder.tvPrice.setText(team.getPrice());
-            myViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Bundle bundle = new Bundle();
-                    bundle.putSerializable("team", team);
-                    Fragment fragment = new ResultFragment();
-                    fragment.setArguments(bundle);
-                    FragmentManager fragmentManager = getFragmentManager();
-                    if (fragmentManager != null) {
-                        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                        fragmentTransaction.replace(R.id.content, fragment);
-                        fragmentTransaction.addToBackStack(null);//強迫儲存此頁資料，讓ResultFragment回來此頁有先前資料
-                        fragmentTransaction.commit();
-                    }
-                }
-            });
+//            myViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    Bundle bundle = new Bundle();
+//                    bundle.putSerializable("team", team);
+//                    Fragment fragment = new ResultFragment();
+//                    fragment.setArguments(bundle);
+//                    FragmentManager fragmentManager = getFragmentManager();
+//                    if (fragmentManager != null) {
+//                        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//                        fragmentTransaction.replace(R.id.content, fragment);
+//                        fragmentTransaction.addToBackStack(null);//強迫儲存此頁資料，讓ResultFragment回來此頁有先前資料
+//                        fragmentTransaction.commit();
+//                    }
+//                }
+//            });
         }
     }
 
